@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NavBar() {
   const classes = useStyles();
-  const [title,setTitle] = useState();
+  const [title,setTitle] = useState("");
   const history = useHistory();
   const menus = [
       {
@@ -50,7 +50,7 @@ export default function NavBar() {
             {title}
           </Typography>
           {
-              menus.map((v,i) => <Button key={i} color="inherit" onClick={() => { setTitle(v.text); history.push(v.path)}}>{v.text}</Button>)
+              menus.map((v,i) => <Button key={i} color="inherit" onClick={() => { setTitle(`${v.text}`); history.push(v.path)}}>{v.text}</Button>)
           }
         </Toolbar>
       </AppBar>
